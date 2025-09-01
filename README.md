@@ -34,7 +34,7 @@ The system follows a simple yet powerful automated workflow:
 
 The Power BI dashboard provides a centralized view of the fraud detection analysis with several key insights:
 
-![Fraud Detection Dashboard](input_file_0.png)
+![Fraud Detection Dashboard](Dashboard.png)
 
 - **Total Submissions**: A key performance indicator (KPI) card showing the total number of reports submitted by users (155).
 - **SMS vs Email**: A pie chart breaking down the source of submissions, indicating whether they came from email (46%) or SMS (54%).
