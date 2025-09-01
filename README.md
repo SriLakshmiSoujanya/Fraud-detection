@@ -1,6 +1,6 @@
-# Automated Fraud Detection & Analysis System
+Automated Fraud Detection & Analysis System
 
-This project implements an end-to-end automated system for detecting and analyzing fraudulent SMS and email messages. Users can submit suspicious messages through a simple form, and the system uses an AI model to classify them. The results are then logged and visualized in a real-time Power BI dashboard.
+This project implements an end-to-end automated system for detecting and analyzing fraudulent SMS and email messages. Users can submit suspicious messages through a simple form, and the system uses an AI model to classify them. The results are then logged, user feedback is collected, and everything is visualized in a real-time Power BI dashboard.
 
 The entire workflow is orchestrated using the Microsoft Power Platform (SharePoint, Power Automate, and Power BI).
 
@@ -10,7 +10,8 @@ The entire workflow is orchestrated using the Microsoft Power Platform (SharePoi
 - **Automated Email Notifications**: Instantaneous warning emails upon submission and a final verdict email after analysis.
 - **AI-Powered Classification**: Utilizes a pre-trained AI model within Power Automate to classify submissions as "Fraud" or "Safe".
 - **Centralized Data Logging**: All submissions and their outcomes are stored securely in a SharePoint List.
-- **Interactive Dashboard**: A comprehensive Power BI dashboard provides insights into the collected data, showing trends, key metrics, and geographical information.
+- **Integrated Feedback Loop**: A feedback form link is included in the final verdict email, allowing users to rate the service.
+- **Interactive Dashboard**: A comprehensive Power BI dashboard provides insights into the collected data, showing trends and user satisfaction ratings.
 
 ## 🛠️ Tech Stack
 
@@ -24,21 +25,43 @@ The entire workflow is orchestrated using the Microsoft Power Platform (SharePoi
 
 The system follows a simple yet powerful automated workflow:
 
-1.  **Submission**: A user receives a suspicious email or SMS and submits its details (e.g., sender's email ID, message content, SMS code) through a dedicated form.
-2.  **Instant Alert**: As soon as the form is submitted, a Power Automate flow is triggered, which immediately sends a precautionary warning email to the user, advising them not to click any links or share personal information.
-3.  **AI Analysis**: The Power Automate flow then passes the submitted data to a trained AI model, which analyzes the content and classifies it as either "Fraud" or "Safe".
-4.  **Verdict & Logging**: The classification result is logged back into the SharePoint List, and a final verdict email is sent to the user informing them of the outcome.
-5.  **Visualization**: The SharePoint List serves as a live data source for the Power BI dashboard. The dashboard automatically refreshes to display the latest data, providing a comprehensive overview of all submissions.
+1.  **Submission**: A user receives a suspicious email or SMS and submits its details through a dedicated form.
+2.  **Instant Alert**: As soon as the form is submitted, a Power Automate flow is triggered, which immediately sends a precautionary warning email.
+3.  **AI Analysis**: The flow then passes the submitted data to an AI model, which classifies it as either "Fraud" or "Safe".
+4.  **Verdict & Logging**: The classification result is logged back into the SharePoint List.
+5.  **Feedback Collection**: A final verdict email is sent to the user informing them of the outcome and includes a link to a feedback form.
+6.  **Visualization**: The SharePoint List and feedback responses serve as live data sources for the Power BI dashboard.
 
-## 📊 Dashboard Overview
+## 📸 System in Action: A Visual Walkthrough
 
-The Power BI dashboard provides a centralized view of the fraud detection analysis with several key insights:
+Here is a visual breakdown of the key components of the system.
+
+### 1. The Submission Form
+This is the starting point for the user. They enter the details of the suspicious message into this simple and clean form.
+
+![Submission Form](Form.png)
+
+### 2. The Automation Engine (Power Automate)
+This flow is the heart of the project. It triggers on a new form submission and automates every step: sending emails, calling the AI model, and logging the results.
+
+![Power Automate Flow](Power%20Automate%20Flow.png)
+
+### 3. Data Logging (SharePoint List)
+All results from the AI analysis are automatically recorded in a structured SharePoint list, which acts as the database for our dashboard.
+
+![SharePoint List Responses](Responses.png)
+
+### 4. User Feedback Form
+After the analysis is complete, users receive a link to this form to provide a rating and feedback on the service.
+
+![Feedback Form](Feedback%20Form.png)
+
+## 📊 Final Result: The Power BI Dashboard
+
+All the collected data is fed into this interactive Power BI dashboard, providing a real-time, comprehensive overview of fraud attempts and user satisfaction.
 
 ![Fraud Detection Dashboard](Dashboard.png)
 
-- **Total Submissions**: A key performance indicator (KPI) card showing the total number of reports submitted by users (155).
-- **SMS vs Email**: A pie chart breaking down the source of submissions, indicating whether they came from email (46%) or SMS (54%).
-- **Fraud vs Safe**: A donut chart showing the overall classification results, with 52% of submissions identified as Fraud and 48% as Safe.
-- **Feedback - User Ratings**: A bar chart displaying user satisfaction with the system. A vast majority (125 users) have given a 5-star rating, indicating high satisfaction.
-- **Status by Location**: A map visualization showing the geographic origins of the submissions, helping to identify region-specific campaigns.
-- **Top 10 Mail IDs & Message Codes**: Two tables that list the most frequently reported email addresses and SMS sender codes, along with their fraud status. This is crucial for identifying repeat offenders and common scam patterns.
+---
+
+*This README was generated by Decide AI.*
